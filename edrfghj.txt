@@ -1,0 +1,202 @@
+ <!-- Program area start -->
+        <section class="h7_program-area pb-50 fix">
+            <!-- <div class="program-text-wrap mb-55">
+                <div class="program-text-ticker" id="program-text-ticker">
+                    <h1 class="h7_program-title">Campus Academics Programs</h1>
+                </div>
+            </div> -->
+            <div class="container">
+                <div class="h7_program-wrap">
+                    <div class="row g-0">
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="bg-highlights">
+                                <h5 class="h7_program-item-title">Upcoming Events</h5>
+                                <div class="">
+                                    <ul class="news-list">
+                                        <?php
+                                        $sql = "SELECT * FROM events where status=1 order by event_date desc Limit 2";
+                                        $result = $db->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                $event_id = $row['event_id'];
+                                                $encoded_id = base64_encode($event_id);
+                                                $event_title = $row['title'];
+                                                $event_desc = $row['description'];
+                                                $event_date = $row['event_date'];
+                                                $img = $row['image'];
+                                        ?>
+                                                <li id="information">
+                                                    <div class="latest-news-thumb" id="events">
+                                                        <img src="admin/services/<?php echo $img; ?>" class="news-image">
+                                                        <h2 class="latest-news-subh" style="margin-left:20px; text-align:justify;">
+                                                            <a href="event-details.php?id=<?php echo $encoded_id; ?>"><?php echo $event_title ?></a>
+                                                        </h2>
+
+                                                    </div>
+                                                    <p class="news-sm-text" style="margin-bottom:0px;">Date: <?php echo $event_date ?></p>
+                                                    <p class="news-sm-text" style="margin-bottom:0px;">
+                                                        <a href="event-details.php?id=<?php echo $encoded_id; ?>">Read More</a>
+                                                    </p>
+                                                </li>
+                                        <?php
+                                            } //end of while loop
+                                        } else {
+                                            echo "no upcoming events";
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+
+                                <a href="events.php" class="theme-btn theme-btn-7">View All<i class="fa-light fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="bg-highlights">
+                                <h3 class="h7_program-item-title ">Latest News</h3>
+                                <div class="">
+                                    <ul class="news-list">
+                                        <?php
+                                        $sql = "SELECT * FROM latest_news where status=1 order by news_date desc Limit 2";
+                                        $result = $db->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                $news_id = $row['news_id'];
+                                                $encoded_id = base64_encode($news_id);
+                                                $news_title = $row['title'];
+                                                $news_desc = $row['description'];
+                                                $news_date = $row['news_date'];
+                                                $img = $row['image'];
+                                        ?>
+                                                <li id="information">
+                                                    <div class="latest-news-thumb" id="events">
+                                                        <img src="admin/services/<?php echo $img; ?>" class="news-image">
+                                                        <h2 class="latest-news-subh" style="margin-left:20px; text-align:justify;">
+                                                            <a href="news-details.php?id=<?php echo $encoded_id; ?>"><?php echo $news_title ?></a>
+                                                        </h2>
+
+                                                    </div>
+                                                    <p class="news-sm-text" style="margin-bottom:0px;">Date: <?php echo $news_date ?></p>
+                                                    <p class="news-sm-text" style="margin-bottom:0px;">
+                                                        <a href="news-details.php?id=<?php echo $encoded_id; ?>">Read More</a>
+                                                    </p>
+                                                </li>
+                                        <?php
+                                            } //end of while loop
+                                        } else {
+                                            echo "no upcoming events";
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                                <a href="news.php" class="theme-btn theme-btn-7">View All<i class="fa-light fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="bg-highlights">
+                                <h3 class="h7_program-item-title">Spotlights</h3>
+                                <div class="">
+                                    <ul class="news-list">
+                                        <?php
+
+                                        $sql = "SELECT * FROM spotlight  where status=1 order by spotlight_date desc limit 3";
+                                        $result = $db->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                $spot_id = $row['spotlight_id'];
+                                                $encoded_id = base64_encode($spot_id);
+
+                                                echo '<li id="information">
+                           <div class="circular-block-item">
+                              <h2 class="latest-news-subh">
+                                 <a href="spotlight-details.php?id=' . $encoded_id . '">' . $row['title'] . '</a>
+                              </h2>
+                              <p class="news-sm-text">Date: ' . $row['spotlight_date'] . '</p>
+                           </div>
+                        </li>';
+                                            }
+                                        } else {
+                                            echo '';
+                                        }
+
+
+                                        ?>
+                                    </ul>
+                                </div>
+                                <a href="spotlight.php" class="theme-btn theme-btn-7">View All<i class="fa-light fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Program area end -->
+         <!-- blog area start -->
+        <section class="h3_blog-area pt-105 pb-110 bg-light">
+            <div class="container">
+                <div class="row align-items-end mb-30">
+                    <div class="col-md-9">
+                        <div class="section-area-6 mb-30">
+                            <!-- <span class="section-subtitle">Meet Our Mentors</span> -->
+                            <h2 class="section-title mb-0">News & Achievements</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="h3_category-section-button mb-40 text-md-end">
+                            <a href="news-achievements.php" class="theme-btn theme-btn-medium theme-btn-6">View All News<i class="fa-light fa-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php
+                    $sql = "SELECT * FROM news WHERE status=1 ORDER BY news_date DESC LIMIT 3";
+                    $result = $db->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $news_id = $row['news_id'];
+                            $encoded_id = base64_encode($news_id);
+                            $des = $row['description']; // Ensure $des is initialized here
+                            $image = $row['image'];
+                            $date = $row['news_date'];
+                            $title = $row['title'];
+
+                            // Limit description to 15 words
+                            if (!empty($des)) { // Check if description is not empty
+                                $desc_words = explode(" ", $des);
+                                if (count($desc_words) > 15) {
+                                    $desc_words = array_slice($desc_words, 0, 15); // Get first 15 words
+                                    $desc = implode(" ", $desc_words) . "..."; // Add ellipsis at the end
+                                } else {
+                                    $desc = $des; // If description has less than 15 words, use the full description
+                                }
+                            } else {
+                                $desc = ""; // Fallback in case description is empty
+                            }
+                    ?>
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="h3_blog-item mb-30">
+                                    <div class="h3_blog-img">
+                                        <a href="news-achievements.php"><img src="admin/services/<?php echo $image; ?>" alt=""></a>
+                                    </div>
+                                    <div class="h3_blog-content">
+                                        <div class="h3_blog-content-meta">
+                                            <span><i class="fa-thin fa-clock"></i><?php echo $date; ?></span>
+                                        </div>
+                                        <h5 class="h3_blog-content-title"><a href="blog-details.html"><?php echo $title; ?></a></h5>
+                                        <p align="justify"><?php echo $desc; ?></p>
+                                        <!-- <a href="news-achievements.php" class="h3_blog-btn">Read More<i class="fa-light fa-arrow-right"></i></a> -->
+                                        <a class="h3_blog-btn" href="news-achievements-details.php?id=<?php echo base64_encode($news_id); ?>">Read More<i class="fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    } else {
+                        echo "No news available";
+                    }
+                    ?>
+                </div>
+
+            </div>
+        </section>
+        <!-- blog area end -->

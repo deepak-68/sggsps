@@ -1,0 +1,6 @@
+.htaccess
+/vendor/
+/uploads
+/admin
+/assets/downloads/*
+/assets/img/*

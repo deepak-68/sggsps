@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Sitemap:https://sggsps.in/sitemap.xml
+Sitemap:https://sggsps.in/sitemap-1.xml
+Sitemap:https://sggsps.in/sitemap-2.xml
+Sitemap:https://sggsps.in/sitemap-3.xml
+Sitemap:https://sggsps.in/sitemap-4.xml
+Sitemap:https://sggsps.in/sitemap-5.xml
+Sitemap:https://sggsps.in/sitemap-6.xml
+Sitemap:https://sggsps.in/sitemap-7.xml
+Sitemap:https://sggsps.in/sitemap-8.xml
+Sitemap:https://sggsps.in/sitemap-9.xml
+Sitemap:https://sggsps.in/sitemap-10.xml
+Sitemap:https://sggsps.in/sitemap-11.xml
+Sitemap:https://sggsps.in/sitemap-12.xml
+Sitemap:https://sggsps.in/sitemap-13.xml
+Sitemap:https://sggsps.in/sitemap-14.xml
+Sitemap:https://sggsps.in/sitemap-15.xml
+Sitemap:https://sggsps.in/sitemap-16.xml
+Sitemap:https://sggsps.in/sitemap-17.xml
