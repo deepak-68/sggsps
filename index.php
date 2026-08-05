@@ -707,12 +707,11 @@ error_reporting(E_ALL);
             </div>
         </section>
         <!-- event area start -->
-        <section class="h5_event-area pt-50 pb-140">
+        <!-- <section class="h5_event-area pt-50 pb-140">
             <div class="container">
                 <div class="row align-items-end mb-30">
                     <div class="col-md-9">
                         <div class="section-area-6 mb-30">
-                            <!-- <span class="section-subtitle">Meet Our Mentors</span> -->
                             <h2 class="section-title mb-0">Upcoming Events</h2>
                         </div>
                     </div>
@@ -738,9 +737,9 @@ error_reporting(E_ALL);
                                     $event_title = $row['title'];
                                     $event_desc = $row['description'];
                                     $time = $row['time'];
-                                    $date = $row['event_date']; // Assuming this is in a format like 'YYYY-MM-DD'
-                                    $day = date('d', strtotime($date));  // Extracts the day (e.g., '07')
-                                    $month = date('F, Y', strtotime($date)); // Extracts the abbreviated month name (e.g., 'Dec')
+                                    $date = $row['event_date']; 
+                                    $day = date('d', strtotime($date));  
+                                    $month = date('F, Y', strtotime($date)); 
                                     $img = $row['image'];
                                     $location = $row['location'];
                             ?>
@@ -758,7 +757,7 @@ error_reporting(E_ALL);
                                         </div>
                                     </div>
                             <?php
-                                } //end of while loop
+                                } 
                             } else {
                                 echo "no upcoming events";
                             }
@@ -774,7 +773,84 @@ error_reporting(E_ALL);
                     </div>
 
                 </div>
-                <!-- above row -->
+            </div>
+        </section> -->
+        <!-- event area end -->
+        <!-- event area start -->
+        <section class="h5_event-area pt-50 pb-140">
+            <div class="container">
+                <div class="row align-items-end mb-30">
+                    <div class="col-md-9">
+                        <div class="section-area-6 mb-30">
+                            <h2 class="section-title mb-0">News & Achievements</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="h3_category-section-button mb-40 text-md-end">
+                            <a href="news-achivement.php" class="theme-btn theme-btn-medium theme-btn-6">View All News & Achievements<i class="fa-light fa-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-0">
+
+                    <div class="col-xl-7">
+
+                        <div class="h5_event-wrap">
+                            <?php
+                            $sql = "SELECT * FROM news where status=1 order by news_date desc Limit 3";
+                            $result = $db->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $event_id = $row['news_id'];
+                                    $encoded_id = base64_encode($event_id);
+                                    $event_title = $row['title'];
+                                    $event_desc = $row['description'];
+                                    $time = $row['time'] ?? '';
+                                    $date = $row['news_date']; 
+                                    $day = date('d', strtotime($date));  
+                                    $month = date('F, Y', strtotime($date)); 
+                                    $img = $row['image'];
+                                    $location = $row['location'] ?? '';
+                            ?>
+                                    <div class="h5_event-item">
+                                        <div class="h5_event-item-date">
+                                            <h1 class="text-light"><?php echo $day; ?></h1>
+                                            <p><?php echo $month; ?></p>
+                                        </div>
+                                        <div class="h5_event-item-content">
+                                            <ul>
+                                                <?php 
+                                                    if($location){?>
+                                                        <li><a href="#"><i class="fa-light fa-location-dot"></i><?php echo $location; ?></a></li>
+                                                   <?php } ?>
+                                                <?php 
+                                                    if($time){?>
+                                                        <li><a href="#"><i class="fa-light fa-clock"></i><?php echo $time; ?></a></li>
+                                                   <?php } ?>
+                                                
+                                            </ul>
+                                            <h5><a href="news-achivement-details.php?id=<?php echo $encoded_id; ?>"><?php echo $event_title; ?></a></h5>
+                                            <!-- <p><?php echo implode(' ', array_slice(explode(' ', strip_tags($event_desc)), 0, 10)) . '...'; ?></p> -->
+                                        </div>
+                                    </div>
+                            <?php
+                                } 
+                            } else {
+                                echo "no upcoming events";
+                            }
+                            ?>
+
+                        </div>
+
+                    </div>
+                    <div class="col-xl-5">
+                        <div class="h5_event-img w_img">
+                            <img src="assets/img/event/5/1.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
         <!-- event area end -->
