@@ -1,6 +1,11 @@
 .htaccess
 /vendor/
 /uploads
-/admin
+# /admin
+/admin/activities/*
+/admin/ads/*
+/admin/alumnis/*
+/admin/assets/images/*
+/admin/assets/banner/*
 /assets/downloads/*
 /assets/img/*
