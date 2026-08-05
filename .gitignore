@@ -8,4 +8,4 @@
 /admin/assets/images/*
 /admin/assets/banner/*
 /assets/downloads/*
-/assets/img/*
+# /assets/img/*
