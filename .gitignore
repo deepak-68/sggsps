@@ -2,10 +2,10 @@
 /vendor/
 /uploads
 # /admin
-/admin/activities/*
-/admin/ads/*
-/admin/alumnis/*
-/admin/assets/images/*
-/admin/assets/banner/*
-/assets/downloads/*
+# /admin/activities/*
+# /admin/ads/*
+# /admin/alumnis/*
+# /admin/assets/images/*
+# /admin/assets/banner/*
+# /assets/downloads/*
 # /assets/img/*
