@@ -27,7 +27,7 @@
                 </div>
                 <div class="blog_details-post-info">
                     <span><i class="fa-regular fa-calendar-days"></i><?php echo $date;?></span>
-                    <h6 align="justify"><a href="news-achievements-details.php?id=<?php echo $encoded_id?>"><?php echo $title;?></a></h6>
+                    <h6 align="justify"><a href="news-achivement-details.php?id=<?php echo $encoded_id?>"><?php echo $title;?></a></h6>
                 </div>
             </div>
             
