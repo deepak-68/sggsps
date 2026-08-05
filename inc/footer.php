@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="row">
             <div class="col-6">
                 <div class="h6_copyright-text">
-                    <p>&copy; <?php echo date('Y');?> Shri Guru Gobind Singh Public School | Developed by <a href="http://vibrantick.in/" target="_blank">Vibrantick Infotech Solutions</a></p>
+                    <p>&copy; <?php echo date('Y');?> <a href="/" target="_blank">Shri Guru Gobind Singh Public School</a> | Developed by <a href="http://vibrantick.in/" target="_blank">Vibrantick Infotech Solutions</a></p>
                 </div>
             </div>
             <div class="col-6">
